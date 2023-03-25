@@ -3,11 +3,23 @@ package taller_excepciones;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+
+	La clase CalculosNumericos contiene métodos para realizar cálculos matemáticos
+	como raíz cuadrada, pendiente y punto medio de una recta, raíces cuadráticas y
+	convertir números de base 10 a cualquier otra base.
+*/
+
 public class CalculosNumericos {
 	public CalculosNumericos() {
 		// TODO Auto-generated constructor stub
-	}
+	}	
 	
+	/**
+	 * Este método calcula la raíz cuadrada de un número positivo.
+	 * @param numero el número del que se desea calcular la raíz cuadrada
+	 * @throws ArithmeticException si el número es negativo
+	 */
 	public static void raizCuadrada(double numero) {		
 		try {
 			if(numero < 0) {
@@ -19,7 +31,14 @@ public class CalculosNumericos {
 			System.out.println("solo asi se puede hallar la raiz");
 		}
 	}
-		
+	
+	/**
+	 * Este método calcula la pendiente o el punto medio de una recta, según la opción 
+	 * seleccionada por el usuario.
+	 * @param opc la opción seleccionada por el usuario (1 para pendiente, 2 para punto medio)
+	 * @throws ArithmeticException si ocurre una división por cero al calcular la pendiente
+	 * @throws InputMismatchException si el usuario ingresa un valor no numérico
+	 */
 	public static void Recta(int opc) {
 		Scanner teclado = new Scanner(System.in);			
 		try {
@@ -54,6 +73,11 @@ public class CalculosNumericos {
 		}
 	}
 	
+	/**
+	 * Este método calcula las raíces cuadráticas de una ecuación de segundo grado.
+	 * @throws ArithmeticException si el coeficiente A es cero o si se intenta dividir por cero
+	 * @throws InputMismatchException si el usuario ingresa un valor no numérico
+	 */
 	public static void raicesCuadraticas() {
 		Scanner teclado = new Scanner(System.in);
 		try {
@@ -91,6 +115,13 @@ public class CalculosNumericos {
 		}
 	}
 	
+	/**
+	* Convierte un número entero a una base N.
+	* @param opc Indica si el número a convertir es entero (1) o decimal (2).
+	* @param base La base a la cual se quiere convertir el número.
+	* @throws InputMismatchException Si el usuario ingresa un valor no numérico.
+	* @throws IllegalArgumentException Si la base ingresada no es válida.
+	*/
 	public static void base_10_a_N() {
 		Scanner teclado = new Scanner(System.in);
 		String strEntero = "", strDecimal = "";
